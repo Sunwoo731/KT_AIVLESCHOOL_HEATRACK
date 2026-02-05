@@ -12,6 +12,22 @@
 *   **Automated Anomaly Detection**: Unsupervised learning (Isolation Forest) to identify thermal hotspots deviating from the norm.
 *   **Synthetic Data Generation**: Physics-informed simulator for generating pipe leak scenarios for model validation.
 
+## 📊 Detection Results
+
+The system successfully detects thermal anomalies in urban environments. Below are actual results from the analysis.
+
+### 1. Thermal Anomaly Map
+Downscaled thermal map (10m) overlaid with the pipe network. The model identifies high-risk areas (red) intersecting with district heating pipes (cyan).
+![Thermal Analysis Result](docs/assets/Visual_Report.png)
+
+### 2. AutoEncoder Reconstruction
+The AutoEncoder learns the "normal" thermal patterns. When it tries to reconstruct a leak (anomaly), it fails, resulting in a high reconstruction error.
+![AutoEncoder Reconstruction](docs/assets/AE_Recon_Examples.png)
+
+### 3. Anomaly Score Distribution
+Separation of normal background data (Blue) and potential leak anomalies (Red) using the Isolation Forest model.
+![Score Distribution](docs/assets/Final_Score_Dist.png)
+
 ---
 
 ## 🏗 System Architecture
