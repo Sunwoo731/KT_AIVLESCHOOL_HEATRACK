@@ -1,0 +1,15 @@
+
+    [Heat Pipe Network Location Analysis]
+    Target Area: Bundang-gu, Seongnam-si (Corrected)
+    
+    Bounding Box:
+      North: 37.489091
+      South: 37.390935
+      East:  127.400180
+      West:  127.309753
+      
+    Center Coordinate:
+      37.433700, 127.356036
+      
+    (Coordinates are WGS84 Standard GPS)
+    

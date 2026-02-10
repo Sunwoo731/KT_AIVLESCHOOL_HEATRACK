@@ -1,0 +1,33 @@
+CRITICAL ERROR: Dataset 'D:////data/yolo_dataset/data.yaml' error  Dataset 'D:////data/yolo_dataset/data.yaml' images not found, missing path 'D:\\\data\yolo_dataset\images\val'
+Note dataset download directory is 'D:\\\datasets'. You can update this in 'C:\Users\user\AppData\Roaming\Ultralytics\settings.json'
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python312\Lib\site-packages\ultralytics\engine\trainer.py", line 660, in get_dataset
+    data = check_det_dataset(self.args.data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python312\Lib\site-packages\ultralytics\data\utils.py", line 462, in check_det_dataset
+    raise FileNotFoundError(m)
+FileNotFoundError: Dataset 'D://빅프로젝트/모델링/data/yolo_dataset/data.yaml' images not found, missing path 'D:\Ʈ\𵨸\data\yolo_dataset\images\val'
+Note dataset download directory is 'D:\빅프로젝트\모델링\datasets'. You can update this in 'C:\Users\user\AppData\Roaming\Ultralytics\settings.json'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "d:\빅프로젝트\모델링\train_segmentation.py", line 151, in <module>
+    train_yolo(yaml_path)
+  File "d:\빅프로젝트\모델링\train_segmentation.py", line 90, in train_yolo
+    results = model.train(
+              ^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python312\Lib\site-packages\ultralytics\engine\model.py", line 769, in train
+    self.trainer = (trainer or self._smart_load("trainer"))(overrides=args, _callbacks=self.callbacks)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python312\Lib\site-packages\ultralytics\models\yolo\segment\train.py", line 40, in __init__
+    super().__init__(cfg, overrides, _callbacks)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python312\Lib\site-packages\ultralytics\models\yolo\detect\train.py", line 63, in __init__
+    super().__init__(cfg, overrides, _callbacks)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python312\Lib\site-packages\ultralytics\engine\trainer.py", line 186, in __init__
+    self.data = self.get_dataset()
+                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python312\Lib\site-packages\ultralytics\engine\trainer.py", line 664, in get_dataset
+    raise RuntimeError(emojis(f"Dataset '{clean_url(self.args.data)}' error ❌ {e}")) from e
+RuntimeError: Dataset 'D:////data/yolo_dataset/data.yaml' error  Dataset 'D:////data/yolo_dataset/data.yaml' images not found, missing path 'D:\\\data\yolo_dataset\images\val'
+Note dataset download directory is 'D:\\\datasets'. You can update this in 'C:\Users\user\AppData\Roaming\Ultralytics\settings.json'

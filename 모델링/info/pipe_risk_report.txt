@@ -1,0 +1,15 @@
+
+    [Heat Pipe Leak Risk Report]
+    Data Source: Landsat 8 TIRS (Thermal)
+    Date: 2019-01-04 (Matched to Analysis Period)
+    
+    Global Suspicion Index (Normalized LST):
+      - Average Risk: 0.5394
+      - Max Risk:     0.8033
+      
+    High Risk Alert:
+      - detected 2 critical zones with Index > 0.8
+      
+    Note: Index 1.0 represents the hottest surface temperature in the scene.
+    Pipes are filtered to only include validating geometries.
+    
