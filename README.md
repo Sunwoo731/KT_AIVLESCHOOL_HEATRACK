@@ -98,6 +98,47 @@ python -m src.main pipeline
 
 ---
 
+# 열수송관 누수 탐지 - 모델링 모듈
+
+이 디렉토리는 위성 영상을 사용하여 열수송관 누수를 탐지하기 위한 핵심 머신러닝 및 데이터 처리 파이프라인을 포함하고 있습니다.
+
+## 저장소 구성 (Repository Composition)
+깃허브 저장소는 핵심 코드와 실행에 필요한 주요 데이터만으로 구성되어 있습니다.
+
+### 1. 포함된 항목 (Included)
+*   **핵심 소스 코드 (`src/`, `utils/`, `app/`)**: 데이터 수집, 전처리, 모델링, 결과 리포팅을 위한 전체 파이프라인 코드.
+*   **유틸리티 스크립트 (`scripts/`)**: 실험 및 검증을 위해 정리된 보조 스크립트 모음.
+*   **주요 데이터 (Key Data)**:
+    *   `data/sample_arirang/`: 파이프라인 실행 테스트를 위한 아리랑 위성 샘플 데이터.
+    *   `data/visuals/`: 모델링 결과 시각화 이미지 및 분석 리포트 예시.
+*   **설명서 및 설정**: `README.md` (본 파일), `requirements.txt` (의존성 목록).
+
+### 2. 제외된 항목 (Excluded)
+저장소의 경량화와 효율적인 관리를 위해 다음 항목들은 `.gitignore`를 통해 자동 제외되었습니다.
+*   **대용량 원천 데이터 (`data/raw/`)**: 수 기가바이트(GB) 단위의 위성 영상 파일.
+*   **학습된 모델 가중치 (`*.pt`)**: 용량이 큰 모델 파일은 로컬에서 관리됩니다.
+*   **가상환경 (`venv/`)**: 로컬 실행 환경 디렉토리.
+
+## 디렉토리 구조
+- **`src/`**: 핵심 애플리케이션 로직.
+  - `data_collector.py`: 위성 데이터 수집.
+  - `super_res.py`: SwinIR 기반 초해상도 모듈.
+  - `anomaly_detect.py`: PatchCore 기반 이상 탐지.
+  - `leak_seg.py`: YOLOv8 기반 누수 세분화.
+- **`scripts/`**: 데이터 검증 및 유틸리티.
+- **`models/`**: 모델 설정 파일 (가중치 제외).
+
+## 설정 및 사용법
+1. 의존성 설치:
+   ```bash
+   pip install -r requirements.txt
+   ```
+2. 통합 파이프라인 실행:
+   ```bash
+   python main.py --target "YYYYMMDD 지역명"
+   ```
+
+
 ## 📊 데이터 출처
 *   **KOMPSAT-3A (아리랑 3A)**: 고해상도 열적외선 영상
 *   **Sentinel-2**: 다중광광 영상 (Vegetation Index 등 활용)
